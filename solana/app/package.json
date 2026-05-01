@@ -1,0 +1,19 @@
+{
+  "name": "surat-realestate-solana-client",
+  "version": "1.0.0",
+  "scripts": {
+    "deploy": "ts-node deploy.ts",
+    "test": "anchor test"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.29.0",
+    "@solana/web3.js": "^1.87.6",
+    "bs58": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "ts-mocha": "^10.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
