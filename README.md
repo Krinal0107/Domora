@@ -1,4 +1,4 @@
-# SuratEstate — Complete Setup Guide
+# Domora — Complete Setup Guide
 
 Next-generation real estate platform for Surat, Gujarat.
 Built with Next.js 14, Express, MongoDB, Solana (Anchor), and OpenAI.
