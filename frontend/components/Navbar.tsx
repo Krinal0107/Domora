@@ -11,8 +11,6 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuthStore } from '@/store/authStore';
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
-import '@solana/wallet-adapter-react-ui/styles.css';
 
 const NAV_LINKS = [
   { label: 'Properties', href: '/properties', icon: Home },
