@@ -151,28 +151,33 @@ export default function DashboardPage() {
               </div>
             ) : (
               <div className="space-y-3">
-                {leads.map(lead => (
-                  <div key={lead._id} className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
-                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold text-sm flex-shrink-0">
-                      {lead.name?.[0]}
+                {leads.map(lead => {
+                  const buyerInfo = typeof lead.buyer === 'object' ? lead.buyer : null;
+                  const buyerName = buyerInfo?.name || 'Unknown';
+                  const buyerPhone = buyerInfo?.phone || '';
+                  return (
+                    <div key={lead._id} className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
+                      <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold text-sm flex-shrink-0">
+                        {buyerName[0]}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-medium text-sm">{buyerName}</div>
+                        <div className="text-xs text-gray-500">{buyerPhone}</div>
+                        <div className="text-xs text-gray-400 truncate">{(lead.property as any)?.title}</div>
+                      </div>
+                      <div className="text-right">
+                        <span className={`text-xs px-2 py-0.5 rounded-full ${
+                          lead.status === 'new' ? 'bg-yellow-100 text-yellow-700' :
+                            lead.status === 'converted' ? 'bg-green-100 text-green-700' :
+                              'bg-gray-100 text-gray-600'
+                        }`}>
+                          {lead.status}
+                        </span>
+                        <div className="text-xs text-gray-400 mt-1">{formatRelativeTime(lead.createdAt)}</div>
+                      </div>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="font-medium text-sm">{lead.name}</div>
-                      <div className="text-xs text-gray-500">{lead.phone}</div>
-                      <div className="text-xs text-gray-400 truncate">{(lead.property as any)?.title}</div>
-                    </div>
-                    <div className="text-right">
-                      <span className={`text-xs px-2 py-0.5 rounded-full ${
-                        lead.status === 'new' ? 'bg-yellow-100 text-yellow-700' :
-                          lead.status === 'converted' ? 'bg-green-100 text-green-700' :
-                            'bg-gray-100 text-gray-600'
-                      }`}>
-                        {lead.status}
-                      </span>
-                      <div className="text-xs text-gray-400 mt-1">{formatRelativeTime(lead.createdAt)}</div>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             )}
           </div>

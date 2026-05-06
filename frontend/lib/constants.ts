@@ -1,5 +1,38 @@
 import type { SuratArea, AreaInsight } from '@/types';
 
+export const AMENITIES_LIST = [
+  'Swimming Pool',
+  'Gym',
+  'Garden',
+  'Parking',
+  'Security',
+  'Power Backup',
+  'Lift',
+  'Clubhouse',
+  'Children Play Area',
+  'Indoor Games',
+  'Fire Safety',
+  'Intercom',
+  'Gas Pipeline',
+  'Rainwater Harvesting',
+  'Vastu Compliant',
+  'Pet Friendly',
+  'Visitor Parking',
+  'Jogging Track',
+  'Tennis Court',
+  'Basketball Court',
+  'Spa',
+  'Jacuzzi',
+  'Multipurpose Hall',
+  'Library',
+  'Cafeteria',
+  'ATM',
+  'Pharmacy',
+  'Grocery Store',
+  'Solar Panels',
+  'EV Charging'
+] as const;
+
 export const SURAT_AREAS: SuratArea[] = [
   'Vesu', 'Adajan', 'Piplod', 'Althan', 'Pal', 'Sarthana',
   'Katargam', 'Varachha', 'Udhna', 'Rander', 'Jahangirpura',

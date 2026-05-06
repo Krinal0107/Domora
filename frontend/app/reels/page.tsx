@@ -90,10 +90,10 @@ export default function ReelsPage() {
           transition={{ duration: 0.4 }}
           className="absolute inset-0"
         >
-          {property.reelVideoUrl ? (
+          {property.videos?.[0] ? (
             <video
               ref={el => { if (el) videoRefs.current.set(current, el); }}
-              src={property.reelVideoUrl}
+              src={property.videos[0]}
               className="w-full h-full object-cover"
               loop
               muted={muted}
@@ -168,7 +168,7 @@ export default function ReelsPage() {
               </div>
               <span className="text-white text-xs">Share</span>
             </button>
-            {property.reelVideoUrl && (
+            {property.videos?.[0] && (
               <button onClick={() => setMuted(m => !m)} className="flex flex-col items-center gap-1">
                 <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
                   {muted ? <VolumeX className="w-6 h-6 text-white" /> : <Volume2 className="w-6 h-6 text-white" />}
