@@ -104,7 +104,7 @@ export default function PropertyDetailPage() {
                 </>
               )}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
-                {images.map((_, i) => (
+                {images.map((_: string, i: number) => (
                   <button key={i} onClick={() => setImgIndex(i)}
                     className={`w-2 h-2 rounded-full transition-all ${i === imgIndex ? 'bg-white w-5' : 'bg-white/50'}`} />
                 ))}
@@ -133,7 +133,7 @@ export default function PropertyDetailPage() {
             {/* Thumbnail Strip */}
             {images.length > 1 && (
               <div className="flex gap-2 overflow-x-auto no-scrollbar">
-                {images.map((img, i) => (
+                {images.map((img: string, i: number) => (
                   <button key={i} onClick={() => setImgIndex(i)}
                     className={`flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all ${i === imgIndex ? 'border-blue-600' : 'border-transparent'}`}>
                     <Image src={img} alt="" width={80} height={64} className="object-cover w-full h-full" />
@@ -239,7 +239,7 @@ export default function PropertyDetailPage() {
               <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-sm">
                 <h2 className="text-lg font-semibold mb-4">Amenities</h2>
                 <div className="flex flex-wrap gap-2">
-                  {property.amenities.map(a => (
+                  {property.amenities.map((a: string) => (
                     <span key={a} className="flex items-center gap-1.5 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-sm px-3 py-1.5 rounded-full">
                       <CheckCircle className="w-3.5 h-3.5" /> {a}
                     </span>

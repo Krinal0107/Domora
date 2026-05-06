@@ -15,7 +15,7 @@ export default function PropertyFiltersPanel({ currentFilters, onFiltersChange }
   const [filters, setFilters] = useState<PropertyFilters>(currentFilters);
 
   const update = (key: keyof PropertyFilters, value: any) => {
-    setFilters(prev => ({ ...prev, [key]: value }));
+    setFilters((prev: PropertyFilters) => ({ ...prev, [key]: value }));
   };
 
   const apply = () => onFiltersChange(filters);
@@ -28,7 +28,7 @@ export default function PropertyFiltersPanel({ currentFilters, onFiltersChange }
   const toggleArea = (area: string) => {
     const current = filters.area || [];
     const updated = current.includes(area as any)
-      ? current.filter(a => a !== area)
+      ? current.filter((a: string) => a !== area)
       : [...current, area as any];
     update('area', updated.length ? updated : undefined);
   };
@@ -36,7 +36,7 @@ export default function PropertyFiltersPanel({ currentFilters, onFiltersChange }
   const toggleBedroom = (n: number) => {
     const current = filters.bedrooms || [];
     const updated = current.includes(n)
-      ? current.filter(b => b !== n)
+      ? current.filter((b: number) => b !== n)
       : [...current, n];
     update('bedrooms', updated.length ? updated : undefined);
   };
@@ -126,7 +126,7 @@ export default function PropertyFiltersPanel({ currentFilters, onFiltersChange }
                 checked={(filters.furnishing || []).includes(f)}
                 onChange={e => {
                   const curr = filters.furnishing || [];
-                  update('furnishing', e.target.checked ? [...curr, f] : curr.filter(x => x !== f));
+                  update('furnishing', e.target.checked ? [...curr, f] : curr.filter((x: string) => x !== f));
                 }} />
               <span className="capitalize">{f}</span>
             </label>
