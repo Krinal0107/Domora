@@ -28,3 +28,11 @@ export const AREA_INSIGHTS: AreaInsight[] = [
   { area: 'Puna', avgPriceBuy: 3300, avgPriceRent: 9200, priceGrowth: 8.3, connectivity: 7, safety: 7, amenities: 6, schools: 7, hospitals: 6, overall: 7, description: 'Developing residential area with good connectivity.', coordinates: { lat: 21.1423, lng: 72.8534 } },
   { area: 'Limbayat', avgPriceBuy: 2900, avgPriceRent: 8500, priceGrowth: 7.5, connectivity: 7, safety: 7, amenities: 5, schools: 6, hospitals: 6, overall: 6, description: 'Affordable residential area near industrial belt.', coordinates: { lat: 21.1634, lng: 72.8823 } }
 ];
+
+export const AMENITIES_LIST = [
+  'Swimming Pool', 'Gym', 'Club House', 'Children Play Area',
+  'Security', '24/7 Water Supply', 'Power Backup', 'Lift',
+  'Parking', 'Garden', 'Tennis Court', 'Badminton Court',
+  'CCTV', 'Intercom', 'Fire Safety', 'Rainwater Harvesting',
+  'Solar Panel', 'Jogging Track', 'Amphitheatre', 'Indoor Games'
+];

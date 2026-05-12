@@ -56,11 +56,27 @@ export interface Property {
   broker?: User | string;
   isVerified: boolean;
   verifiedAt?: string;
+  verifiedBy?: User | string;
+  adminNotes?: string;
   solanaTokenId?: string;
+  documentHash?: string;
   fraudScore: number;
+  fraudFlags?: string[];
   viewCount: number;
   leadCount: number;
   isFeatured: boolean;
+  featuredUntil?: string;
+  reelVideoUrl?: string;
+  reelThumbnail?: string;
+  nearbyPlaces?: {
+    name: string;
+    type: string;
+    distance: number;
+  }[];
+  priceHistory?: {
+    price: number;
+    date: string;
+  }[];
   createdAt: string;
   updatedAt: string;
 }
@@ -107,10 +123,16 @@ export interface Lead {
   buyer: User | string;
   seller: User | string;
   broker?: User | string;
-  message: string;
+  name: string;
+  email: string;
+  phone: string;
+  message?: string;
   status: 'new' | 'contacted' | 'visited' | 'converted' | 'lost';
-  source: 'direct' | 'chatbot' | 'reels';
+  source: 'direct' | 'chatbot' | 'reels' | 'map';
+  notes?: string;
+  followUpDate?: string;
   createdAt: string;
+  updatedAt: string;
 }
 
 export interface Message {
