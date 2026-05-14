@@ -193,4 +193,4 @@ export const FACING_OPTIONS = ['East', 'West', 'North', 'South', 'North-East', '
 export const FURNISHING_OPTIONS = ['unfurnished', 'semi-furnished', 'fully-furnished'];
 
 export const SOLANA_NETWORK = 'devnet';
-export const PROGRAM_ID = 'SuRtEsTaTePRoGrAmIdXXXXXXXXXXXXXXXXXXXXXXXX';
+export const PROGRAM_ID = '8i766exkHgJefjwC8zcfagKQJvny93rsgeNn47wuuwC1';

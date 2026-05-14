@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("SuRtEsTaTePRoGrAmIdXXXXXXXXXXXXXXXXXXXXXXXX");
+declare_id!("8i766exkHgJefjwC8zcfagKQJvny93rsgeNn47wuuwC1");
 
 #[program]
 pub mod real_estate {

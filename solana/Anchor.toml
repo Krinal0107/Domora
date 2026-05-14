@@ -3,7 +3,7 @@ seeds = false
 skip-lint = false
 
 [programs.devnet]
-real_estate = "SuRtEsTaTePRoGrAmIdXXXXXXXXXXXXXXXXXXXXXXXX"
+real_estate = "8i766exkHgJefjwC8zcfagKQJvny93rsgeNn47wuuwC1"
 
 [registry]
 url = "https://api.apr.dev"
